@@ -1,9 +1,9 @@
 let jsonFile = "./__tests__/fixtures/001.json"
 
-let result = jsonFile 
-  |> Node.Fs.readFileAsUtf8Sync 
+let result = jsonFile
+  |> Node.Fs.readFileAsUtf8Sync
   |> Deserializer.fromJSON
-  |> AmbientReducer.reduceToValue(_ => ignore);
+  |> AmbientReducer.reduceToValue(_ => ());
   /* |> AmbientReducer.reduceToValueDebug(_ => ignore); */
 
 switch (result) {
